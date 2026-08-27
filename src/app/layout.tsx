@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { site } from "@/content/site";
 
-const inter = Inter({
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+
+const serif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif-face",
   display: "swap",
 });
 
@@ -31,98 +35,75 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export const viewport = {
-  themeColor: "#fbf8f4",
-};
+export const viewport = { themeColor: "#f1efe9" };
 
 const navLinks = [
   { href: "/#work", label: "Work" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/#skills", label: "Skills" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
-      <body className="min-h-screen bg-bg text-ink antialiased">
+    <html lang="en" className={`${inter.variable} ${serif.variable} ${mono.variable}`}>
+      <body className="min-h-screen bg-paper text-ink antialiased">
+        <div aria-hidden className="grain" />
+
         <a href="#main" className="skip-link">
           Skip to main content
         </a>
 
-        {/* Floating pill nav — detached from the page edge. */}
-        <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-5">
+        {/* Thin editorial masthead — a rule, a name, three words. */}
+        <header className="sticky top-0 z-40 border-b border-rule bg-paper/90 backdrop-blur-sm">
           <nav
             aria-label="Primary"
-            className="mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-line bg-surface/80 px-3 py-2.5 shadow-nav backdrop-blur-xl sm:gap-6 sm:rounded-full sm:px-5 sm:py-3"
+            className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-5 py-3.5 sm:px-10"
           >
-            <Link
-              href="/"
-              className="flex shrink-0 items-center gap-2.5 text-ink transition-opacity hover:opacity-70"
-            >
-              <span
-                aria-hidden
-                className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-accent font-mono text-xs font-bold text-white"
-              >
-                DS
-              </span>
-              <span className="text-sm font-semibold tracking-tight sm:text-base">{site.name}</span>
+            <Link href="/" className="group flex items-baseline gap-3">
+              <span className="font-display text-xl leading-none tracking-tight">{site.name}</span>
+              <span className="label hidden sm:inline">{site.roleShort}</span>
             </Link>
-
-            <ul className="flex items-center gap-0.5 sm:gap-1">
+            <ul className="flex items-center gap-5 sm:gap-8">
               {navLinks.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="rounded-full px-2.5 py-1.5 text-sm text-ink-soft transition-colors hover:bg-accent-soft hover:text-accent sm:px-3.5 sm:py-2"
+                    className="label transition-colors hover:text-ink hover:underline hover:underline-offset-4"
                   >
                     {l.label}
                   </Link>
                 </li>
               ))}
-              <li className="hidden sm:block">
-                <Link
-                  href="/#contact"
-                  className="ml-1 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent"
-                >
-                  Contact
-                </Link>
-              </li>
             </ul>
           </nav>
         </header>
 
-        <main id="main" className="pt-20 sm:pt-28">
+        <main id="main" className="relative z-[2]">
           {children}
         </main>
 
-        {/* Floating footer card. */}
-        <footer className="px-4 pb-6 pt-16 sm:px-8 sm:pb-10">
-          <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl bg-ink px-6 py-12 shadow-lg sm:px-12 sm:py-16">
-            <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
+        {/* Oversized signature footer. */}
+        <footer className="relative z-[2] border-t border-rule bg-ink text-paper">
+          <div className="mx-auto max-w-[1600px] px-5 pb-8 pt-16 sm:px-10 sm:pt-24">
+            <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_auto]">
               <div>
-                <p className="text-2xl font-semibold tracking-tight text-white">{site.name}</p>
-                <p className="mt-2 text-sm text-white/60">
-                  {site.role} · {site.location}
+                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-paper/50">
+                  Available for work
+                </p>
+                <p className="mt-4 max-w-md font-display text-3xl leading-[1.06] sm:text-5xl">
+                  Let&apos;s talk about testing what actually matters.
                 </p>
                 <a
                   href={`mailto:${site.email}`}
-                  className="mt-6 inline-block rounded-full bg-accent-bright px-5 py-2.5 text-sm font-semibold text-[#2b1206] transition-transform hover:-translate-y-0.5"
+                  className="mt-8 inline-block bg-lime px-6 py-3 font-mono text-xs uppercase tracking-[0.14em] text-ink transition-transform hover:-translate-y-0.5"
                 >
-                  Start a conversation
+                  {site.email}
                 </a>
               </div>
-              <ul className="flex flex-col gap-3 text-sm sm:text-right">
+              <ul className="flex flex-col gap-2 font-mono text-xs uppercase tracking-[0.12em] md:text-right">
                 <li>
                   <a
-                    className="text-white/80 transition-colors hover:text-accent-bright"
-                    href={`mailto:${site.email}`}
-                  >
-                    {site.email}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-white/80 transition-colors hover:text-accent-bright"
+                    className="text-paper/70 transition-colors hover:text-lime"
                     href={`tel:${site.phone.replace(/\s/g, "")}`}
                   >
                     {site.phone}
@@ -130,7 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </li>
                 <li>
                   <a
-                    className="text-white/80 transition-colors hover:text-accent-bright"
+                    className="text-paper/70 transition-colors hover:text-lime"
                     href={site.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -138,10 +119,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     LinkedIn ↗
                   </a>
                 </li>
+                <li className="text-paper/40">{site.location}</li>
               </ul>
             </div>
-            <p className="mt-12 border-t border-white/10 pt-6 text-xs leading-relaxed text-white/45">
-              Built with Next.js and Tailwind, and held to the same WCAG 2.2 AA bar as the products
+
+            {/* The name, set as large as the viewport allows. */}
+            <p
+              aria-hidden
+              className="mt-16 select-none font-display leading-[0.8] tracking-[-0.03em] text-paper/15"
+              style={{ fontSize: "clamp(4rem, 19vw, 18rem)" }}
+            >
+              {site.name}
+            </p>
+
+            <p className="mt-6 border-t border-paper/10 pt-6 font-mono text-[10px] leading-relaxed tracking-wide text-paper/40 sm:text-[11px]">
+              Built with Next.js and Tailwind, held to the same WCAG 2.2 AA bar as the products
               described here — keyboard operable throughout, visible focus on every control, AA
               contrast on all text, and no motion for anyone who has asked their system to reduce
               it.

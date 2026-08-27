@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProjectDiagram } from "@/components/diagrams";
-import { MetricTile, Tag } from "@/components/ui";
 import { allProjects, getProject, projects } from "@/content/projects";
 
 export function generateStaticParams() {
@@ -34,157 +33,158 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
 
   return (
     <article>
-      {/* ----------------------------------------------------------- head */}
-      <div className="relative overflow-hidden">
-        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="blob blob-tangerine float-slow absolute -left-24 -top-40 h-[24rem] w-[24rem]" />
-          <div className="blob blob-teal float-slower absolute -right-24 -top-20 h-[20rem] w-[20rem] opacity-40" />
-          <div className="dot-grid absolute inset-0" />
-        </div>
+      {/* =========================================================== head */}
+      <header className="mx-auto max-w-[1600px] px-5 pb-12 pt-10 sm:px-10 sm:pb-16 sm:pt-16">
+        <Link href="/#work" className="label transition-colors hover:text-ink">
+          ← Index
+        </Link>
 
-        <div className="mx-auto max-w-4xl px-5 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-12">
-          <Link
-            href="/#work"
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/80 px-4 py-2 text-sm font-medium text-ink-soft shadow-sm backdrop-blur transition-all hover:-translate-x-0.5 hover:text-accent"
-          >
-            <span aria-hidden>←</span> All work
-          </Link>
-
-          <p className="mt-10 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-            {project.org} · {project.period}
-          </p>
-          <h1 className="mt-4 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+        <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-end">
+          <h1 className="display text-balance" style={{ fontSize: "clamp(2.8rem, 8vw, 8rem)" }}>
             {project.name}
           </h1>
-          <p className="mt-6 text-pretty text-lg leading-relaxed text-ink-soft sm:text-xl">
+          <p className="text-pretty text-base leading-relaxed text-ink-soft lg:pb-4">
             {project.tagline}
           </p>
+        </div>
 
-          <dl className="card mt-10 grid gap-x-10 gap-y-6 p-6 sm:grid-cols-2 sm:p-8">
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-                My role
-              </dt>
-              <dd className="mt-2 text-sm text-ink-soft">{project.role}</dd>
+        <dl className="mt-14 grid gap-x-10 gap-y-6 border-t border-rule pt-7 sm:grid-cols-3">
+          <div>
+            <dt className="label">Client</dt>
+            <dd className="mt-2 text-sm text-ink-soft">{project.org}</dd>
+          </div>
+          <div>
+            <dt className="label">Role</dt>
+            <dd className="mt-2 text-sm text-ink-soft">{project.role}</dd>
+          </div>
+          <div>
+            <dt className="label">Period</dt>
+            <dd className="mt-2 text-sm text-ink-soft">{project.period}</dd>
+          </div>
+        </dl>
+      </header>
+
+      {/* ========================================================= metrics */}
+      <div className="border-y border-rule bg-paper-2">
+        <dl className="mx-auto grid max-w-[1600px] grid-cols-2 gap-8 px-5 py-10 sm:px-10 lg:grid-cols-6">
+          {project.metrics.map((m) => (
+            <div key={m.label}>
+              <dt className="sr-only">{m.label}</dt>
+              <dd>
+                <span className="block font-display text-4xl leading-none sm:text-5xl">
+                  {m.value}
+                </span>
+                <span className="label mt-2 block">{m.label}</span>
+              </dd>
             </div>
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-                Product
-              </dt>
-              <dd className="mt-2 text-sm text-ink-soft">{project.kind}</dd>
+          ))}
+        </dl>
+      </div>
+
+      {/* ============================================================ body */}
+      <div className="mx-auto max-w-[1600px] px-5 py-16 sm:px-10 sm:py-24">
+        <div className="grid min-w-0 gap-10 lg:grid-cols-[18rem_minmax(0,1fr)]">
+          <div className="min-w-0 lg:sticky lg:top-24 lg:self-start">
+            <p className="label">Overview</p>
+            <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+              {project.kind}
+            </p>
+          </div>
+
+          <div className="min-w-0">
+            <p className="max-w-[52ch] text-pretty text-xl leading-relaxed text-ink-soft sm:text-2xl">
+              {project.summary}
+            </p>
+
+            <ProjectDiagram name={project.diagram} caption={project.diagramCaption} />
+
+            <div className="space-y-16">
+              {project.blocks.map((b, i) => (
+                <section key={b.heading} className="border-t border-rule-strong pt-7">
+                  <p className="font-mono text-[11px] text-muted">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <h2
+                    className="display mt-3"
+                    style={{ fontSize: "clamp(1.8rem, 3.6vw, 3rem)" }}
+                  >
+                    {b.heading}
+                  </h2>
+                  {b.body && (
+                    <p className="mt-5 max-w-[68ch] text-base leading-relaxed text-ink-soft sm:text-lg">
+                      {b.body}
+                    </p>
+                  )}
+                  {b.bullets && (
+                    <ul className="mt-6 grid gap-x-12 gap-y-4 sm:grid-cols-2">
+                      {b.bullets.map((li) => (
+                        <li
+                          key={li.slice(0, 32)}
+                          className="border-t border-rule pt-3 text-sm leading-relaxed text-muted"
+                        >
+                          {li}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
+              ))}
             </div>
-          </dl>
+
+            {/* stack */}
+            <section className="mt-16 border-t border-rule-strong pt-7">
+              <h2 className="display" style={{ fontSize: "clamp(1.8rem, 3.6vw, 3rem)" }}>
+                Stack
+              </h2>
+              <div className="mt-8 space-y-8">
+                {project.stack.map((g) => (
+                  <div key={g.group} className="border-t border-rule pt-4">
+                    <h3 className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink">
+                      {g.group}
+                    </h3>
+                    <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+                      {g.items.map((it) => (
+                        <li key={it} className="text-base text-ink-soft">
+                          {it}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {project.confidential && (
+              <aside className="mt-14 border-l-4 border-lime bg-paper-2 px-6 py-5">
+                <h2 className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink">
+                  A note on confidentiality
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">{project.confidential}</p>
+              </aside>
+            )}
+          </div>
         </div>
       </div>
 
-      {/* ----------------------------------------------------------- body */}
-      <div className="mx-auto max-w-4xl px-5 pb-16 pt-10 sm:px-8 sm:pb-24">
-        <p className="text-pretty text-lg leading-relaxed text-ink-soft sm:text-xl">
-          {project.summary}
-        </p>
-
-        <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-3">
-          {project.metrics.map((m) => (
-            <MetricTile key={m.label} value={m.value} label={m.label} />
-          ))}
-        </div>
-
-        <ProjectDiagram name={project.diagram} caption={project.diagramCaption} />
-
-        <div className="space-y-14">
-          {project.blocks.map((b, i) => (
-            <section key={b.heading}>
-              <h2 className="flex items-start gap-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-                <span
-                  aria-hidden
-                  className="mt-1.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-accent-soft font-mono text-[11px] font-bold text-accent"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span>{b.heading}</span>
-              </h2>
-              {b.body && (
-                <p className="mt-5 text-pretty text-base leading-relaxed text-ink-soft sm:text-lg">
-                  {b.body}
-                </p>
-              )}
-              {b.bullets && (
-                <ul className="mt-6 space-y-3">
-                  {b.bullets.map((li) => (
-                    <li
-                      key={li.slice(0, 32)}
-                      className="flex gap-3 text-base leading-relaxed text-muted"
-                    >
-                      <span
-                        aria-hidden
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-bright"
-                      />
-                      <span>{li}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </section>
-          ))}
-        </div>
-
-        {/* ---------------------------------------------------------- stack */}
-        <section className="mt-20">
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Stack</h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            {project.stack.map((g) => (
-              <div key={g.group} className="card p-6">
-                <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-accent">
-                  {g.group}
-                </h3>
-                <ul className="flex flex-wrap gap-2">
-                  {g.items.map((it) => (
-                    <Tag key={it}>{it}</Tag>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {project.confidential && (
-          <aside className="mt-14 rounded-2xl border border-accent-line bg-warn-soft px-6 py-5">
-            <h2 className="text-sm font-semibold text-warn">A note on confidentiality</h2>
-            <p className="mt-2 text-sm leading-relaxed text-ink-soft">{project.confidential}</p>
-          </aside>
-        )}
-
-        {/* ----------------------------------------------------------- next */}
-        <nav aria-label="More work" className="mt-16">
-          <Link
-            href={`/work/${next.slug}`}
-            className="card card-lift card-glow group flex items-center justify-between gap-6 p-7 sm:p-8"
-          >
+      {/* ============================================================ next */}
+      <nav aria-label="More work" className="border-t border-rule">
+        <Link href={`/work/${next.slug}`} className="row group block">
+          <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-5 py-10 sm:px-10 sm:py-14">
             <span>
-              <span className="block font-mono text-xs uppercase tracking-[0.14em] text-muted">
-                Next case study
-              </span>
-              <span className="mt-2 block text-2xl font-semibold tracking-tight transition-colors group-hover:text-accent">
+              <span className="label">Next</span>
+              <span
+                className="display mt-2 block"
+                style={{ fontSize: "clamp(1.9rem, 4.4vw, 3.6rem)" }}
+              >
                 {next.name}
               </span>
             </span>
-            <span
-              aria-hidden
-              className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent-soft text-lg text-accent transition-all group-hover:bg-accent group-hover:text-white"
-            >
+            <span aria-hidden className="row-arrow font-display text-4xl leading-none">
               →
             </span>
-          </Link>
-          <p className="mt-6 text-center">
-            <Link
-              href="/#work"
-              className="link-underline text-sm font-medium text-muted hover:text-accent"
-            >
-              ← Back to all work
-            </Link>
-          </p>
-        </nav>
-      </div>
+          </div>
+        </Link>
+      </nav>
     </article>
   );
 }

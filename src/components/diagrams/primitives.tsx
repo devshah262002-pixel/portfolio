@@ -194,7 +194,7 @@ export function Figure({
     <figure className="my-14">
       {/* Focusable so keyboard users can scroll a wide diagram — WCAG 2.1.1. */}
       <div
-        className="diagram-wrap card p-5 sm:p-8"
+        className="diagram-wrap border border-rule bg-surface p-5 sm:p-8"
         tabIndex={0}
         role="group"
         aria-label={`${caption} Scrollable diagram.`}
@@ -209,7 +209,7 @@ export function Figure({
           {children}
         </svg>
       </div>
-      <figcaption className="mt-4 text-sm leading-relaxed text-muted">{caption}</figcaption>
+      <figcaption className="mt-4 font-mono text-[11px] leading-relaxed tracking-wide text-muted">{caption}</figcaption>
     </figure>
   );
 }

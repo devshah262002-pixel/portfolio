@@ -1,51 +1,38 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Light-only design system.
-   Signature colour: Tangerine #FF6B35 on a warm cream canvas.
-   Cards are pure white so they read as floating above the page.
+   Editorial system.
+   Ink on paper, one electric accent (lime) used only as a FILL
+   with ink text on top — never as coloured text.
+   Type-first: oversized serif display, mono metadata, sans body.
    ============================================================ */
 :root {
   color-scheme: light;
 
-  --bg: #fbf8f4;
-  --bg-tint: #f5f0e8;
+  --paper: #f1efe9;
+  --paper-2: #e8e5dc;
+  --paper-3: #dedad0;
   --surface: #ffffff;
-  --surface-2: #fdfbf8;
-  --border: #ece4d9;
-  --border-strong: #d6cabb;
 
-  --text: #1a1512;
-  --text-soft: #3b3430;
-  --muted: #6a6058;
+  --ink: #111110;
+  --ink-soft: #35342f;
+  --muted: #6b685f;
 
-  /* Interactive tangerine — AA on cream. */
-  --accent: #c2410c;
-  --accent-hover: #9a3412;
-  /* Decorative tangerine — large shapes and gradients only. */
-  --accent-bright: #ff6b35;
-  --accent-soft: #fff2e9;
-  --accent-line: #ffd6bf;
+  --rule: #d3cfc3;
+  --rule-strong: #b6b1a3;
 
-  --teal: #0f766e;
-  --teal-soft: #e6f4f2;
-  --ok: #15803d;
-  --ok-soft: #e8f5ec;
-  --warn: #a16207;
-  --warn-soft: #fdf5e3;
+  /* Electric lime. Background fills only. */
+  --lime: #ccf94a;
+  --lime-deep: #b9ea22;
+  /* Darkened lime that passes AA as text on paper. */
+  --lime-text: #4a6300;
 
-  /* Diagram tones — separated by hue, not just lightness. */
-  --d1: #c2410c;
-  --d2: #0f766e;
-  --d3: #6d28d9;
-  --d4: #15803d;
+  --d1: #111110;
+  --d2: #4a6300;
+  --d3: #1e40af;
+  --d4: #9a3412;
 
-  --shadow-sm: 0 1px 2px rgb(26 21 18 / 0.04), 0 1px 3px rgb(26 21 18 / 0.05);
-  --shadow-md: 0 2px 4px rgb(26 21 18 / 0.03), 0 10px 24px -8px rgb(26 21 18 / 0.1);
-  --shadow-lg: 0 4px 10px rgb(26 21 18 / 0.04), 0 24px 48px -16px rgb(26 21 18 / 0.16);
-  --shadow-float: 0 2px 6px rgb(26 21 18 / 0.04), 0 28px 60px -24px rgb(194 65 12 / 0.3);
-  --shadow-nav: 0 1px 2px rgb(26 21 18 / 0.05), 0 12px 32px -12px rgb(26 21 18 / 0.16);
-
+  --font-display: var(--font-serif-face), Georgia, "Times New Roman", serif;
   --font-sans-stack: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     Arial, sans-serif;
   --font-mono-stack: var(--font-mono-face), ui-monospace, SFMono-Regular, Menlo, Consolas,
@@ -53,35 +40,32 @@
 }
 
 @theme inline {
-  --color-bg: var(--bg);
-  --color-bg-tint: var(--bg-tint);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
   --color-surface: var(--surface);
-  --color-surface-2: var(--surface-2);
-  --color-line: var(--border);
-  --color-line-strong: var(--border-strong);
-  --color-ink: var(--text);
-  --color-ink-soft: var(--text-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
   --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
-  --color-accent-bright: var(--accent-bright);
-  --color-accent-soft: var(--accent-soft);
-  --color-accent-line: var(--accent-line);
-  --color-teal: var(--teal);
-  --color-teal-soft: var(--teal-soft);
-  --color-ok: var(--ok);
-  --color-ok-soft: var(--ok-soft);
-  --color-warn: var(--warn);
-  --color-warn-soft: var(--warn-soft);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-lime: var(--lime);
+  --color-lime-deep: var(--lime-deep);
+  --color-lime-text: var(--lime-text);
 
-  --shadow-sm: var(--shadow-sm);
-  --shadow-md: var(--shadow-md);
-  --shadow-lg: var(--shadow-lg);
-  --shadow-float: var(--shadow-float);
-  --shadow-nav: var(--shadow-nav);
-
+  --font-display: var(--font-display);
   --font-sans: var(--font-sans-stack);
   --font-mono: var(--font-mono-stack);
+}
+
+/* Legacy token aliases so the diagram primitives keep working. */
+:root {
+  --text: var(--ink);
+  --text-soft: var(--ink-soft);
+  --bg: var(--paper);
+  --border: var(--rule);
+  --border-strong: var(--rule-strong);
+  --accent: var(--ink);
 }
 
 html {
@@ -90,14 +74,13 @@ html {
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--font-sans-stack);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Nothing here animates for anyone who has asked their system to stop. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -109,21 +92,20 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .float-slow,
-  .float-slower {
+  .marquee-track {
     animation: none !important;
+    transform: none !important;
   }
 }
 
 :focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--ink);
   outline-offset: 3px;
-  border-radius: 4px;
 }
 
 ::selection {
-  background: var(--accent-bright);
-  color: #fff;
+  background: var(--lime);
+  color: var(--ink);
 }
 
 .skip-link {
@@ -136,104 +118,116 @@ body {
   left: 0.75rem;
   top: 0.75rem;
   padding: 0.6rem 1rem;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 8px;
+  background: var(--ink);
+  color: var(--lime);
   font-weight: 600;
 }
 
-/* ---------------- Floating decoration ---------------- */
-
-/* Soft colour clouds behind the hero. Purely decorative. */
-.blob {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(64px);
-  opacity: 0.5;
+/* ---------------- Paper grain ---------------- */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
   pointer-events: none;
-}
-.blob-tangerine {
-  background: radial-gradient(circle at 30% 30%, #ffb08a, transparent 70%);
-}
-.blob-teal {
-  background: radial-gradient(circle at 70% 40%, #8fd6cd, transparent 70%);
-}
-.blob-violet {
-  background: radial-gradient(circle at 50% 50%, #c8b6f5, transparent 70%);
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
 }
 
-@keyframes drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
+/* ---------------- Display type ---------------- */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  /* Kept at 1.0: any tighter and a .mark highlight clips the descenders
+     of the line above it. */
+  line-height: 1;
+}
+
+/* Lime marker behind a phrase. Drawn as a band inside the line box so it
+   never bleeds into the line above. */
+.mark {
+  background-image: linear-gradient(var(--lime), var(--lime));
+  background-repeat: no-repeat;
+  background-size: 100% 84%;
+  background-position: 0 72%;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.12em;
+}
+
+.label {
+  font-family: var(--font-mono-stack);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------------- Marquee ---------------- */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-flex;
+  animation: slide 48s linear infinite;
+  will-change: transform;
+}
+@keyframes slide {
+  from {
+    transform: translate3d(0, 0, 0);
   }
-  50% {
-    transform: translate3d(0, -18px, 0) scale(1.05);
+  to {
+    transform: translate3d(-50%, 0, 0);
   }
 }
-.float-slow {
-  animation: drift 14s ease-in-out infinite;
-}
-.float-slower {
-  animation: drift 20s ease-in-out infinite reverse;
-}
 
-/* Fine dotted grid, faded out at the edges. */
-.dot-grid {
-  background-image: radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
-  background-size: 26px 26px;
-  mask-image: radial-gradient(ellipse 80% 55% at 50% 10%, #000 20%, transparent 75%);
-}
-
-/* ---------------- Floating cards ---------------- */
-
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  box-shadow: var(--shadow-md);
-  transition:
-    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.28s ease;
-}
-.card-lift:hover,
-.card-lift:focus-within {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent-line);
-}
-
-/* Gradient hairline that fades in around a featured card on hover. */
-.card-glow {
+/* ---------------- Index rows ---------------- */
+.row {
   position: relative;
+  display: block;
+  border-top: 1px solid var(--rule);
+  transition: background-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.card-glow::after {
+.row:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.row::before {
   content: "";
   position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--accent-bright), transparent 45%, var(--teal));
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.28s ease;
-  pointer-events: none;
+  inset: 0;
+  background: var(--lime);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
 }
-.card-glow:hover::after,
-.card-glow:focus-within::after {
-  opacity: 1;
+.row:hover::before,
+.row:focus-visible::before {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+.row > * {
+  position: relative;
+  z-index: 1;
+}
+.row .row-arrow {
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.row:hover .row-arrow,
+.row:focus-visible .row-arrow {
+  transform: translateX(10px);
+}
+.row .row-meta {
+  transition: color 0.3s ease;
+}
+.row:hover .row-meta,
+.row:focus-visible .row-meta {
+  color: var(--ink);
 }
 
-/* ---------------- Diagram frame ---------------- */
-
+/* ---------------- Misc ---------------- */
 .diagram-wrap {
   overflow-x: auto;
   overscroll-behavior-x: contain;
@@ -243,17 +237,20 @@ body {
 }
 
 .prose-body p {
-  max-width: 68ch;
+  max-width: 66ch;
 }
 
-/* Tangerine underline that grows on hover. */
-.link-underline {
-  background-image: linear-gradient(var(--accent), var(--accent));
-  background-size: 0% 2px;
+.rule-top {
+  border-top: 1px solid var(--rule);
+}
+
+.underline-grow {
+  background-image: linear-gradient(var(--ink), var(--ink));
+  background-size: 100% 1px;
   background-position: 0 100%;
   background-repeat: no-repeat;
   transition: background-size 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.link-underline:hover {
-  background-size: 100% 2px;
+.underline-grow:hover {
+  background-size: 0% 1px;
 }
