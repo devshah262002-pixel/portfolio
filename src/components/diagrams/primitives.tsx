@@ -191,10 +191,10 @@ export function Figure({
   children: ReactNode;
 }) {
   return (
-    <figure className="my-10">
+    <figure className="my-14">
       {/* Focusable so keyboard users can scroll a wide diagram — WCAG 2.1.1. */}
       <div
-        className="diagram-wrap rounded-xl border border-line bg-surface/50 p-4 sm:p-6"
+        className="diagram-wrap card p-5 sm:p-8"
         tabIndex={0}
         role="group"
         aria-label={`${caption} Scrollable diagram.`}
@@ -209,7 +209,7 @@ export function Figure({
           {children}
         </svg>
       </div>
-      <figcaption className="mt-3 text-sm text-muted">{caption}</figcaption>
+      <figcaption className="mt-4 text-sm leading-relaxed text-muted">{caption}</figcaption>
     </figure>
   );
 }
