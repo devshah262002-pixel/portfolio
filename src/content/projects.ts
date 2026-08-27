@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "Quality ownership on a tri-lingual, offline-capable platform that follows a person with a disability from first contact to settled employment.",
     org: "Codesage · EnAble India",
     period: "Feb 2026 — Present",
-    role: "QA Analyst — end-to-end quality owner, and contributing engineer",
+    role: "Senior QA Engineer — end-to-end quality owner, and contributing engineer",
     kind: "Full-stack product · Web, Windows desktop, Android",
     featured: true,
     order: 1,
@@ -429,7 +429,7 @@ export const projects: Project[] = [
       "End-to-end regression and security spot-checks on a logistics planning and live fleet-tracking platform.",
     org: "Codesage",
     period: "Feb — Mar 2026",
-    role: "QA Analyst — regression and edge-case coverage",
+    role: "Senior QA Engineer — regression and edge-case coverage",
     kind: "Logistics & fleet management",
     featured: false,
     order: 6,
@@ -482,8 +482,8 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "biograph",
-    name: "BioGraph",
+    slug: "biomap",
+    name: "Biomap",
     tagline:
       "Role-based end-to-end automation for a wellness platform, built on reusable data-driven components.",
     org: "Ace Infoway Pvt. Ltd.",
@@ -493,7 +493,7 @@ export const projects: Project[] = [
     featured: false,
     order: 7,
     summary:
-      "BioGraph serves four distinct roles — Admin, Relationship Manager, Subject Matter Expert and Client — and each of them sees a different version of the same modules. Automating that naively means writing the suite four times. I built it once, data-driven, and parameterised the role.",
+      "Biomap serves four distinct roles — Admin, Relationship Manager, Subject Matter Expert and Client — and each of them sees a different version of the same modules. Automating that naively means writing the suite four times. I built it once, data-driven, and parameterised the role.",
     metrics: [
       { value: "4", label: "roles automated" },
       { value: "5", label: "core modules covered" },

@@ -1,7 +1,15 @@
 import Link from "next/link";
 import { Section, Tag } from "@/components/ui";
 import { allProjects, featuredProjects } from "@/content/projects";
-import { education, experience, languages, site, skillGroups, training } from "@/content/site";
+import {
+  earlierProjects,
+  education,
+  experience,
+  languages,
+  site,
+  skillGroups,
+  training,
+} from "@/content/site";
 
 export default function Home() {
   const secondary = allProjects.filter((p) => !p.featured);
@@ -149,6 +157,34 @@ export default function Home() {
                     </span>
                   </p>
                 </Link>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="mb-5 mt-14 text-sm font-semibold uppercase tracking-[0.14em] text-muted">
+            Earlier QA engagements
+          </h3>
+          <ul className="grid gap-4 sm:grid-cols-2">
+            {earlierProjects.map((p) => (
+              <li key={p.name} className="rounded-xl border border-line bg-bg p-5">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h4 className="text-base font-semibold tracking-tight">{p.name}</h4>
+                  <p className="font-mono text-[11px] uppercase tracking-wider text-muted">
+                    {p.period}
+                  </p>
+                </div>
+                <p className="mt-1 text-sm text-muted">{p.org}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">{p.note}</p>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {p.coverage.map((c) => (
+                    <li
+                      key={c}
+                      className="rounded-full border border-line bg-surface px-2.5 py-1 font-mono text-[11px] text-muted"
+                    >
+                      {c}
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>

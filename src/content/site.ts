@@ -1,15 +1,16 @@
 export const site = {
   name: "Dev Shah",
-  role: "QA Analyst",
+  role: "Senior QA Engineer — SDET",
+  roleShort: "Senior QA Engineer",
   tagline:
-    "QA Analyst who owns quality end to end — test strategy, automation, accessibility, and the tooling the team tests with.",
+    "Senior QA Engineer and SDET who owns quality end to end — test strategy, automation across web and mobile, accessibility, and the tooling the team tests with.",
   location: "Bengaluru, India",
   email: "devshah262002@gmail.com",
   phone: "+91 96621 22232",
   linkedin: "https://www.linkedin.com/in/dev-shah-654777389",
   pronouns: "he/him",
   intro: [
-    "I am a QA Analyst with three and a half years in test automation, currently owning quality end to end on MEL — a live platform that helps people with disabilities move through skill training, employment and post-placement support.",
+    "I am a Senior QA Engineer and SDET with three and a half years in test automation, currently owning quality end to end on MEL — a live platform that helps people with disabilities move through skill training, employment and post-placement support.",
     "My work does not stop at finding defects. I write the test strategy, automate the regression suite across web, Android and desktop, enforce WCAG 2.2 AA, and build the internal tooling my team runs its testing on. When a fix is faster to ship than to describe, I ship it — 206 of my commits are merged into the product's own React and Hono codebases.",
   ],
   pillars: [
@@ -53,7 +54,7 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
-    role: "QA Analyst — Full-Stack SDET",
+    role: "Senior QA Engineer — Full-Stack SDET",
     org: "Codesage (deployed at EnAble India)",
     place: "Bengaluru, India",
     period: "Feb 2026 — Present",
@@ -108,6 +109,7 @@ export const skillGroups = [
       "Cucumber (BDD)",
       "Page Object Model",
       "REST API automation",
+      "Postman",
       "TestRigor (AI / self-healing)",
       "Vitest",
     ],
@@ -116,7 +118,9 @@ export const skillGroups = [
     group: "QA practice",
     items: [
       "Test planning & strategy",
-      "Manual & regression testing",
+      "End-to-end testing (web & mobile)",
+      "Manual + automation testing",
+      "Functional, regression & UI testing",
       "UAT coordination & sign-off",
       "Release readiness reporting",
       "Database validation (SQL / MS SQL)",
@@ -129,6 +133,7 @@ export const skillGroups = [
     group: "Accessibility",
     items: [
       "WCAG 2.1 / 2.2 AA",
+      "Inclusive design testing",
       "axe-core",
       "Keyboard & focus-order audits",
       "Screen-reader testing",
@@ -157,11 +162,40 @@ export const skillGroups = [
     items: [
       "Git / GitHub / GitLab",
       "Jira (REST API)",
-      "Agile / Scrum",
+      "Agile / Scrum (SDLC / STLC)",
       "Vercel",
       "Maven",
       "Zoho",
       "Confluence-style specs & FRDs",
     ],
+  },
+];
+
+export type EarlierProject = {
+  name: string;
+  org: string;
+  period: string;
+  note: string;
+  coverage: string[];
+};
+
+/**
+ * Engagements from the Ace Infoway years that do not yet have a full case study.
+ * Give one a `note` with real substance and it can graduate into `projects.ts`.
+ */
+export const earlierProjects: EarlierProject[] = [
+  {
+    name: "SelfDrive",
+    org: "Ace Infoway Pvt. Ltd.",
+    period: "2023 — 2026",
+    note: "Web and mobile QA across the release cycle.",
+    coverage: ["End-to-end (web & mobile)", "Manual + automation", "Functional & regression"],
+  },
+  {
+    name: "Smoker Zone",
+    org: "Ace Infoway Pvt. Ltd.",
+    period: "2023 — 2026",
+    note: "Web and mobile QA across the release cycle.",
+    coverage: ["End-to-end (web & mobile)", "Manual + automation", "UI & regression"],
   },
 ];

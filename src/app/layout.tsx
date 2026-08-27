@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             >
               {site.name}
               <span className="ml-2 hidden font-mono text-xs font-normal text-muted sm:inline">
-                {site.role}
+                {site.roleShort}
               </span>
             </Link>
             <ul className="-mx-2 flex items-center gap-0.5 sm:gap-2">
