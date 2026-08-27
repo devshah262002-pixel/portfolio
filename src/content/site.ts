@@ -152,7 +152,20 @@ export const skillGroups = [
     ],
   },
   {
-    group: "Engineering",
+    group: "CI/CD & test infrastructure",
+    items: [
+      "GitHub Actions",
+      "CI pipeline maintenance",
+      "Automated regression runs",
+      "Docker",
+      "Containerised build pipelines",
+      "Android emulator & AVD provisioning",
+      "Vercel",
+    ],
+  },
+  {
+    // Not a capability claim — this is the stack my merged commits are in.
+    group: "Product code I have shipped in",
     items: [
       "TypeScript",
       "React 19",
@@ -163,7 +176,6 @@ export const skillGroups = [
       "Redis",
       "Python",
       "Tauri",
-      "Docker",
     ],
   },
   {
@@ -172,7 +184,6 @@ export const skillGroups = [
       "Git / GitHub / GitLab",
       "Jira (REST API)",
       "Agile / Scrum (SDLC / STLC)",
-      "Vercel",
       "Maven",
       "Zoho",
       "Confluence-style specs & FRDs",

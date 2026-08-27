@@ -264,6 +264,10 @@ export default function Home() {
             <p className="mt-4 font-display text-3xl leading-[1.05] sm:text-4xl">
               What I work with.
             </p>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted">
+              The first four groups are what I do. The last is the stack my merged commits are
+              in - listed as evidence, not as a second job title.
+            </p>
           </div>
 
           <div className="space-y-12">
