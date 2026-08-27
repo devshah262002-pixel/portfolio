@@ -48,6 +48,16 @@ export default function Home() {
               <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-ink" />
               {site.availability}
             </p>
+            <a
+              href={site.cv}
+              download
+              className="mt-4 inline-flex items-center gap-2 border border-ink px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink transition-colors hover:bg-ink hover:text-paper"
+            >
+              Download CV
+              <span aria-hidden>↓</span>
+              <span className="sr-only">(PDF)</span>
+            </a>
+
             <p className="label mt-6">Currently</p>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
               {site.role} at Codesage, deployed at EnAble India — owning quality on MEL, a platform
@@ -321,7 +331,7 @@ export default function Home() {
               Test strategy, accessibility, or building software for people the industry usually{" "}
               <span className="mark">designs around.</span>
             </p>
-            <ul className="mt-12 grid gap-8 sm:grid-cols-3">
+            <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               <li>
                 <p className="label">Email</p>
                 <a
@@ -338,6 +348,12 @@ export default function Home() {
                   className="underline-grow mt-2 inline-block text-base"
                 >
                   {site.phone}
+                </a>
+              </li>
+              <li>
+                <p className="label">CV</p>
+                <a href={site.cv} download className="underline-grow mt-2 inline-block text-base">
+                  Download PDF ↓
                 </a>
               </li>
               <li>

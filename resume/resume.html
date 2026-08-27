@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dev Shah — Senior QA Engineer / SDET</title>
+    <style>
+      /* ATS-safe: single column, real text, standard headings, no tables,
+         no icons, no text in images, no multi-column flow. */
+      @page {
+        size: A4;
+        margin: 13mm 14mm;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Calibri", "Carlito", "Helvetica Neue", Arial, sans-serif;
+        font-size: 10.2pt;
+        line-height: 1.38;
+        color: #14140f;
+      }
+      h1 {
+        font-size: 21pt;
+        margin: 0 0 1mm;
+        letter-spacing: -0.01em;
+      }
+      .title {
+        font-size: 11.4pt;
+        font-weight: 700;
+        margin: 0 0 1.5mm;
+      }
+      .contact {
+        font-size: 9.4pt;
+        margin: 0 0 4mm;
+      }
+      h2 {
+        font-size: 10.2pt;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: 5.5mm 0 2mm;
+        padding-bottom: 1mm;
+        border-bottom: 1px solid #14140f;
+      }
+      h3 {
+        font-size: 10.6pt;
+        margin: 3.5mm 0 0.5mm;
+      }
+      .meta {
+        font-size: 9.2pt;
+        margin: 0 0 1.5mm;
+      }
+      ul {
+        margin: 0 0 2mm;
+        padding-left: 4.5mm;
+      }
+      li {
+        margin-bottom: 1.1mm;
+      }
+      p {
+        margin: 0 0 2mm;
+      }
+      .kv {
+        margin: 0 0 1.4mm;
+      }
+      .kv strong {
+        display: inline;
+      }
+      a {
+        color: #14140f;
+        text-decoration: none;
+      }
+      .avoid-break {
+        break-inside: avoid;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dev Shah</h1>
+    <p class="title">Senior QA Engineer — SDET</p>
+    <p class="contact">
+      Bengaluru, India &nbsp;|&nbsp; +91 96621 22232 &nbsp;|&nbsp; devshah262002@gmail.com
+      &nbsp;|&nbsp; linkedin.com/in/dev-shah-654777389
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      Senior QA Engineer and SDET who owns quality end to end — test strategy, automation across
+      web, Android and desktop, and WCAG 2.1 / 2.2 AA accessibility. Currently the quality owner on
+      a live React 19 and Hono / PostgreSQL platform, where I authored a 1,028-case test suite
+      across 22 modules, built the team's test-management tooling as a deployed product, and merged
+      206 commits of feature and fix code into the product itself.
+    </p>
+
+    <h2>Experience</h2>
+
+    <div class="avoid-break">
+      <h3>Senior QA Engineer / Full-Stack SDET — Codesage (deployed at EnAble India)</h3>
+      <p class="meta">Bengaluru, India &nbsp;|&nbsp; Feb 2026 - Present &nbsp;|&nbsp; Full-time</p>
+      <ul>
+        <li>
+          Own end-to-end quality on MEL, a platform helping people with disabilities through skill
+          training, employment and post-placement support — a React 19 and Hono / PostgreSQL
+          product shipping to web, Windows desktop and Android in three languages (EN / HI / KN).
+        </li>
+        <li>
+          Authored and maintain a <strong>1,028-case test suite</strong> across 22 modules —
+          Candidates, Trainings, Courses, Centres, Campaigns, Settlements, Workplace Support,
+          Committees, Master Data and Reports — with per-role variants for nine role types.
+        </li>
+        <li>
+          Designed and built the <strong>MEL Test Dashboard</strong>, a deployed test-management
+          product unifying test cases, runs and Jira, with a Playwright watcher that executes
+          queued tests unattended and posts results back with evidence. Sole author, 95 commits.
+        </li>
+        <li>
+          Extended regression coverage to the Tauri Android and Windows desktop builds through a
+          self-contained Appium and emulator harness with a Docker-based APK pipeline.
+        </li>
+        <li>
+          Led accessibility across the product: axe-core automation, manual keyboard and
+          screen-reader audits, and responsive verification from 320px to 1920px at 200-400% zoom.
+        </li>
+        <li>
+          Found and drove fixes for defects that passed happy-path scripts — an offline sync cursor
+          silently dropping same-timestamp rows, unique-violation errors surfacing as opaque 500s,
+          and future dates accepted as a date of birth.
+        </li>
+        <li>
+          Shipped <strong>206 merged commits</strong> (~50,000 lines) of feature and fix code across
+          the frontend and backend, including the settlement follow-up scheduler, an app-wide
+          centre/state scope switcher, server-side master-data search, and committee PDF export.
+        </li>
+        <li>
+          Drove UAT cycles end to end and produced the sign-off packages, release notes and
+          production readiness reports the client signs against.
+        </li>
+      </ul>
+    </div>
+
+    <div class="avoid-break">
+      <h3>QA Automation Engineer — Ace Infoway Pvt. Ltd.</h3>
+      <p class="meta">Ahmedabad, India &nbsp;|&nbsp; Nov 2023 - Jan 2026 &nbsp;|&nbsp; Full-time</p>
+      <ul>
+        <li>
+          Built and maintained Selenium and Playwright automation frameworks on the Page Object
+          Model with Cucumber BDD, covering web, Android and iOS from a single unified codebase.
+        </li>
+        <li>
+          Automated <strong>70% of regression testing</strong>, cutting manual effort per sprint by
+          50%.
+        </li>
+        <li>
+          Executed <strong>600+ test cases per release</strong> at 100% functional coverage, with
+          consistently bug-free production builds.
+        </li>
+        <li>
+          Performed database validation with SQL and MS SQL, and integrated TestRigor for
+          scriptless, self-healing automation.
+        </li>
+      </ul>
+    </div>
+
+    <h2>Selected Projects</h2>
+    <div class="avoid-break">
+      <ul>
+        <li>
+          <strong>MEL Platform (EnAble India)</strong> — four-repository full-stack system with
+          role-based access, a tri-lingual UI, and an offline-first Android client. Quality owner.
+        </li>
+        <li>
+          <strong>MEL Test Dashboard</strong> — serverless test-management product on Vercel and
+          Upstash Redis, with a Playwright runner and two-way Jira REST integration. Sole author.
+        </li>
+        <li>
+          <strong>DISH — Disability Information &amp; Support Hub</strong> — AI search assistant for
+          people with disabilities across eight repositories. Owned the WCAG 2.1 AA audit and the
+          Playwright functional suite.
+        </li>
+        <li>
+          <strong>SupplAI</strong> — logistics planning and live fleet tracking with GPS telematics.
+          End-to-end Playwright regression, filter edge cases and cross-site-scripting probes.
+        </li>
+        <li>
+          <strong>Rotawiz</strong> — Australian healthcare rostering product. End-to-end automation
+          across web, Android and iOS from one codebase.
+        </li>
+        <li>
+          <strong>Biomap</strong> — wellness platform. Role-based automation across Admin,
+          Relationship Manager, Subject Matter Expert and Client using reusable, data-driven
+          components.
+        </li>
+        <li>
+          <strong>SelfDrive</strong> and <strong>Smoker Zone</strong> — web and mobile QA across the
+          release cycle.
+        </li>
+      </ul>
+    </div>
+
+    <h2>Skills</h2>
+    <p class="kv">
+      <strong>Test automation:</strong> Playwright, Selenium WebDriver, Appium, TestNG, Cucumber
+      (BDD), Page Object Model, REST API automation, Postman, TestRigor, Vitest
+    </p>
+    <p class="kv">
+      <strong>QA practice:</strong> Test planning and strategy, end-to-end testing (web and mobile),
+      manual and regression testing, functional and UI testing, UAT coordination and sign-off,
+      release readiness reporting, database validation (SQL / MS SQL), cross-platform testing (web /
+      Android / iOS / desktop), security spot-checks (XSS, input validation)
+    </p>
+    <p class="kv">
+      <strong>Accessibility:</strong> WCAG 2.1 / 2.2 AA, axe-core, keyboard and focus-order audits,
+      screen-reader testing, inclusive design testing, responsive testing 320px-1920px, 200-400%
+      zoom reflow
+    </p>
+    <p class="kv">
+      <strong>Engineering:</strong> TypeScript, React 19, Hono, Node.js, PostgreSQL, Drizzle ORM,
+      Redis, Python, Tauri, Docker
+    </p>
+    <p class="kv">
+      <strong>Tools and process:</strong> Git, GitHub, GitLab, Jira, Agile / Scrum (SDLC / STLC),
+      Maven, Vercel, Zoho
+    </p>
+
+    <h2>Education</h2>
+    <p class="kv">
+      <strong>B.Tech, Computer Engineering</strong> — CHARUSAT (Charotar University of Science
+      &amp; Technology), Gujarat &nbsp;|&nbsp; Nov 2020 - Jan 2024
+    </p>
+
+    <h2>Training and Languages</h2>
+    <p class="kv">
+      <strong>Training:</strong> Playwright Automation (self-directed); Selenium WebDriver with Java
+      (Udemy); Agile Testing Foundations (self-directed)
+    </p>
+    <p class="kv"><strong>Languages:</strong> English (Proficient), Hindi (Native)</p>
+  </body>
+</html>

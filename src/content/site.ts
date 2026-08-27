@@ -10,6 +10,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/dev-shah-654777389",
   pronouns: "he/him",
   availability: "Open to Senior QA / SDET roles — Bengaluru or remote",
+  cv: "/Dev-Shah-Senior-QA-Engineer-SDET.pdf",
   intro: [
     "I am a Senior QA Engineer and SDET with nearly three years in test automation, currently owning quality end to end on MEL — a live platform that helps people with disabilities move through skill training, employment and post-placement support.",
     "My work does not stop at finding defects. I write the test strategy, automate the regression suite across web, Android and desktop, enforce WCAG 2.2 AA, and build the internal tooling my team runs its testing on. When a fix is faster to ship than to describe, I ship it — 206 of my commits are merged into the product's own React and Hono codebases.",

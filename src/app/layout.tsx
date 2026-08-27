@@ -119,6 +119,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     LinkedIn ↗
                   </a>
                 </li>
+                <li>
+                  <a className="text-paper/70 transition-colors hover:text-lime" href={site.cv} download>
+                    Download CV ↓
+                  </a>
+                </li>
                 <li className="text-paper/40">{site.location}</li>
               </ul>
             </div>
