@@ -355,6 +355,13 @@ export default function Home() {
                 <a href={site.cv} download className="underline-grow mt-2 inline-block text-base">
                   Download PDF ↓
                 </a>
+                <a
+                  href={site.cvDocx}
+                  download
+                  className="underline-grow mt-1 block text-sm text-muted"
+                >
+                  .docx (ATS) ↓
+                </a>
               </li>
               <li>
                 <p className="label">LinkedIn</p>
