@@ -44,7 +44,11 @@ export default function Home() {
           </h1>
 
           <div className="lg:pb-4">
-            <p className="label">Currently</p>
+            <p className="inline-flex items-center gap-2 bg-lime px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-ink">
+              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-ink" />
+              {site.availability}
+            </p>
+            <p className="label mt-6">Currently</p>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
               {site.role} at Codesage, deployed at EnAble India — owning quality on MEL, a platform
               for people with disabilities.
@@ -118,6 +122,9 @@ export default function Home() {
                     </h2>
                     <p className="row-meta mt-2 max-w-2xl text-sm leading-relaxed text-muted">
                       {p.tagline}
+                    </p>
+                    <p className="row-meta mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
+                      {p.tags.join("  ·  ")}
                     </p>
                   </div>
 
@@ -218,7 +225,10 @@ export default function Home() {
                   )}
                 </div>
                 <p className="mt-3 font-mono text-xs uppercase tracking-[0.12em] text-muted">
-                  {e.org} · {e.place} · {e.period}
+                  {e.org} · {e.place}
+                </p>
+                <p className="mt-1.5 font-mono text-xs uppercase tracking-[0.12em] text-muted">
+                  {e.period} · {e.duration} · {e.engagement}
                 </p>
                 <ul className="mt-7 grid gap-x-12 gap-y-4 sm:grid-cols-2">
                   {e.points.map((pt) => (

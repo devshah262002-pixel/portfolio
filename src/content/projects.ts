@@ -13,6 +13,7 @@ export type Project = {
   order: number;
   summary: string;
   metrics: Metric[];
+  tags: string[];
   diagram: string;
   diagramCaption: string;
   blocks: Block[];
@@ -42,6 +43,7 @@ export const projects: Project[] = [
       { value: "206", label: "of my commits merged" },
       { value: "~50k", label: "lines of product code written" },
     ],
+    tags: ["React 19", "Hono", "PostgreSQL", "Playwright", "Tauri", "WCAG 2.2 AA"],
     diagram: "mel",
     diagramCaption:
       "MEL system architecture — three clients over one Hono API, with an offline sync path for field devices.",
@@ -160,6 +162,7 @@ export const projects: Project[] = [
       { value: "207", label: "Playwright automation scripts" },
       { value: "12", label: "serverless function budget, met" },
     ],
+    tags: ["Playwright", "Python", "Upstash Redis", "Jira REST", "Vercel"],
     diagram: "dashboard",
     diagramCaption:
       "From Excel workbook to executed run and back to Jira — the dashboard's full loop.",
@@ -233,6 +236,7 @@ export const projects: Project[] = [
       { value: "400%", label: "zoom reflow verified" },
       { value: "2", label: "products audited (MEL, DISH)" },
     ],
+    tags: ["axe-core", "Playwright", "WCAG 2.1 / 2.2 AA", "Screen readers"],
     diagram: "a11y",
     diagramCaption:
       "The accessibility pipeline — automated scans catch the mechanical failures, manual passes catch the ones that matter most.",
@@ -316,6 +320,7 @@ export const projects: Project[] = [
       { value: "2", label: "mobile platforms configured" },
       { value: "0", label: "global installs required" },
     ],
+    tags: ["Appium", "Android SDK", "Docker", "Page Object Model"],
     diagram: "mobile",
     diagramCaption:
       "The harness is self-contained — JDK, SDK, AVD, Appium and the APK builder all live inside one folder.",
@@ -376,6 +381,7 @@ export const projects: Project[] = [
       { value: "46", label: "in-scope delivery items" },
       { value: "AA", label: "WCAG 2.1 conformance target" },
     ],
+    tags: ["Playwright", "axe-core", "Qdrant", "WCAG 2.1 AA"],
     diagram: "dish",
     diagramCaption:
       "DISH retrieval path — query rewriting into a vector store, with speech-to-text as a first-class input.",
@@ -440,6 +446,7 @@ export const projects: Project[] = [
       { value: "5", label: "formal test reports delivered" },
       { value: "GPS", label: "live telematics integration" },
     ],
+    tags: ["Playwright", "JavaScript", "XSS probes", "Excel reporting"],
     diagram: "supplai",
     diagramCaption:
       "The journey lifecycle — most defects live in the transitions, not the screens.",
@@ -498,6 +505,7 @@ export const projects: Project[] = [
       { value: "4", label: "roles automated" },
       { value: "5", label: "core modules covered" },
     ],
+    tags: ["Selenium", "Playwright", "Page Object Model", "SQL"],
     diagram: "pom",
     diagramCaption:
       "One Page Object layer, four role datasets — the pattern that kept the suite from being written four times.",
@@ -548,6 +556,7 @@ export const projects: Project[] = [
       { value: "600+", label: "test cases per release" },
       { value: "50%", label: "manual effort reduced" },
     ],
+    tags: ["Selenium", "Appium", "Cucumber BDD", "TestNG"],
     diagram: "unified",
     diagramCaption:
       "One framework, three targets — the unified web, Android and iOS codebase behind the Ace Infoway suites.",

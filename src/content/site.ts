@@ -9,6 +9,7 @@ export const site = {
   phone: "+91 96621 22232",
   linkedin: "https://www.linkedin.com/in/dev-shah-654777389",
   pronouns: "he/him",
+  availability: "Open to Senior QA / SDET roles — Bengaluru or remote",
   intro: [
     "I am a Senior QA Engineer and SDET with three and a half years in test automation, currently owning quality end to end on MEL — a live platform that helps people with disabilities move through skill training, employment and post-placement support.",
     "My work does not stop at finding defects. I write the test strategy, automate the regression suite across web, Android and desktop, enforce WCAG 2.2 AA, and build the internal tooling my team runs its testing on. When a fix is faster to ship than to describe, I ship it — 206 of my commits are merged into the product's own React and Hono codebases.",
@@ -48,6 +49,8 @@ export type ExperienceEntry = {
   org: string;
   place: string;
   period: string;
+  duration: string;
+  engagement: string;
   current?: boolean;
   points: string[];
 };
@@ -58,6 +61,8 @@ export const experience: ExperienceEntry[] = [
     org: "Codesage (deployed at EnAble India)",
     place: "Bengaluru, India",
     period: "Feb 2026 — Present",
+    duration: "7 months",
+    engagement: "Full-time · Client site",
     current: true,
     points: [
       "Own end-to-end quality on MEL, a React 19 and Hono / PostgreSQL platform serving people with disabilities across skill training, employment and post-placement support.",
@@ -73,6 +78,8 @@ export const experience: ExperienceEntry[] = [
     org: "Ace Infoway Pvt. Ltd.",
     place: "Ahmedabad, India",
     period: "Nov 2023 — Jan 2026",
+    duration: "2 years 3 months",
+    engagement: "Full-time",
     points: [
       "Built and maintained Selenium and Playwright automation frameworks on the Page Object Model with Cucumber BDD, covering web, Android and iOS from a single unified codebase.",
       "Automated 70% of regression testing, cutting manual effort per sprint by 50%.",
