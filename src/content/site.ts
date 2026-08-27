@@ -11,7 +11,7 @@ export const site = {
   pronouns: "he/him",
   availability: "Open to Senior QA / SDET roles — Bengaluru or remote",
   intro: [
-    "I am a Senior QA Engineer and SDET with three and a half years in test automation, currently owning quality end to end on MEL — a live platform that helps people with disabilities move through skill training, employment and post-placement support.",
+    "I am a Senior QA Engineer and SDET with nearly three years in test automation, currently owning quality end to end on MEL — a live platform that helps people with disabilities move through skill training, employment and post-placement support.",
     "My work does not stop at finding defects. I write the test strategy, automate the regression suite across web, Android and desktop, enforce WCAG 2.2 AA, and build the internal tooling my team runs its testing on. When a fix is faster to ship than to describe, I ship it — 206 of my commits are merged into the product's own React and Hono codebases.",
   ],
   pillars: [
@@ -37,7 +37,7 @@ export const site = {
     },
   ],
   headlineMetrics: [
-    { value: "3.5+", label: "years in QA automation" },
+    { value: "2.9", label: "years in QA automation" },
     { value: "1,028", label: "test cases authored & owned" },
     { value: "206", label: "commits merged to production code" },
     { value: "WCAG 2.2", label: "AA enforced across the product" },
@@ -61,7 +61,7 @@ export const experience: ExperienceEntry[] = [
     org: "Codesage (deployed at EnAble India)",
     place: "Bengaluru, India",
     period: "Feb 2026 — Present",
-    duration: "7 months",
+    duration: "6 months",
     engagement: "Full-time · Client site",
     current: true,
     points: [
@@ -78,7 +78,7 @@ export const experience: ExperienceEntry[] = [
     org: "Ace Infoway Pvt. Ltd.",
     place: "Ahmedabad, India",
     period: "Nov 2023 — Jan 2026",
-    duration: "2 years 3 months",
+    duration: "2 years 2 months",
     engagement: "Full-time",
     points: [
       "Built and maintained Selenium and Playwright automation frameworks on the Page Object Model with Cucumber BDD, covering web, Android and iOS from a single unified codebase.",
