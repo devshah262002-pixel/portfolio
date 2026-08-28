@@ -21,7 +21,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://devshah.vercel.app"),
+  metadataBase: new URL("https://devshah-qa.vercel.app"),
   title: {
     default: `${site.name} — ${site.role}`,
     template: `%s · ${site.name}`,
