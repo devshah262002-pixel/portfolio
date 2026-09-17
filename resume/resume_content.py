@@ -17,8 +17,28 @@ CONTACT = [
     "linkedin.com/in/dev-shah-654777389",
 ]
 
+from datetime import date
+
+CAREER_START = date(2023, 11, 1)
+_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
+
+
+def experience_phrase(today=None):
+    """'nearly three years', 'three years', 'over three years': whatever is true today."""
+    today = today or date.today()
+    years = (today - CAREER_START).days / 365.25
+    whole = int(years)
+    frac = years - whole
+    word = lambda n: _WORDS[n] if n < len(_WORDS) else str(n)
+    if frac >= 0.75:
+        return f"nearly {word(whole + 1)} years"
+    if frac < 0.25:
+        return f"{word(whole)} years"
+    return f"over {word(whole)} years"
+
+
 SUMMARY = (
-    "Senior QA Engineer and SDET with nearly three years owning quality end to end - test "
+    f"Senior QA Engineer and SDET with {experience_phrase()} owning quality end to end - test "
     "strategy, automation across web, Android and desktop, and WCAG 2.1 / 2.2 AA "
     "accessibility. Sole quality owner on a live React 19 and Hono / PostgreSQL platform, "
     "where I authored a 1,028-case suite, built the team's test-management tooling as a "
