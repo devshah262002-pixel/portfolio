@@ -31,7 +31,7 @@ SKILLS = [
     (
         "Test automation",
         "Playwright, Selenium WebDriver, Appium, TestNG, Cucumber (BDD), Page Object Model, "
-        "REST API automation, Postman, TestRigor, Vitest, JavaScript / TypeScript, Python",
+        "REST API automation, Postman, TestRigor, Vitest, JavaScript / TypeScript, Java, Python",
     ),
     (
         "QA practice",
@@ -82,8 +82,8 @@ EXPERIENCE = [
         "org": "Ace Infoway Pvt. Ltd.",
         "meta": "Ahmedabad, India | Nov 2023 - Jan 2026 | Full-time",
         "bullets": [
-            "Built and maintained Selenium and Playwright frameworks on the Page Object Model with "
-            "Cucumber BDD, covering web, Android and iOS from a single unified codebase.",
+            "Built and maintained Selenium (Java, TestNG) and Playwright frameworks on the Page Object "
+            "Model with Cucumber BDD, covering web, Android and iOS from a single unified codebase.",
             "Automated 70% of regression testing, cutting manual effort per sprint by 50%.",
             "Executed 600+ test cases per release at 100% functional coverage, with consistently "
             "bug-free production builds.",
@@ -188,7 +188,7 @@ PROJECTS = [
         "compact": True,
         "name": "Earlier projects - Rotawiz, Biomap, SelfDrive, Smoker Zone",
         "org": "Ace Infoway",
-        "stack": "Selenium, Playwright, Appium, Cucumber BDD, TestNG, Maven, SQL",
+        "stack": "Selenium, Java, Playwright, Appium, Cucumber BDD, TestNG, Maven, SQL",
         "what": (
             "Healthcare rostering (Australia), a multi-role wellness platform, and two further "
             "web and mobile products."
