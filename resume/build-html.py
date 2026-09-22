@@ -1,8 +1,8 @@
 """Generate resume.html from resume_content.py.
 
 Typography follows 2026 ATS + readability guidance:
-  margins 0.8in, body 11pt Calibri, section headings 13pt bold,
-  name 20pt, line spacing 1.15, space *before* each block.
+  margins 0.6in, body 11pt Calibri, section headings 13pt bold,
+  name 20pt, line spacing 1.08, space *before* each block.
 
 No letter-spacing anywhere: it makes Chrome's PDF writer emit glyphs
 individually, so headings extract as "E D U C A T I O N".
@@ -21,13 +21,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "resume.html")
 
 CSS = """
-@page { size: A4; margin: 0.7in; }
+@page { size: A4; margin: 0.6in; }
 * { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: Calibri, Carlito, "Helvetica Neue", Arial, sans-serif;
   font-size: 11pt;
-  line-height: 1.12;
+  line-height: 1.08;
   color: #14140f;
 }
 h1 { font-size: 20pt; font-weight: 700; margin: 0 0 2pt; }

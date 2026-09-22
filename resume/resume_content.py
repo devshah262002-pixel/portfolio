@@ -51,14 +51,18 @@ SKILLS = [
     (
         "Test automation",
         "Playwright, Selenium WebDriver, Appium, TestNG, Cucumber (BDD), Page Object Model, "
-        "REST API automation, Postman, TestRigor, Vitest, JavaScript / TypeScript, Java, Python",
+        "REST API automation, Postman, TestRigor, Vitest, JavaScript / TypeScript, Java, "
+        "Python, Cypress, WebdriverIO, Robot Framework, JUnit, pytest, Mocha / Chai, REST "
+        "Assured, SoapUI, Swagger / OpenAPI, contract testing (Pact), microservices, C# / .NET, "
+        "Spring Boot, Django / Flask",
     ),
     (
         "QA practice",
         "Test planning and strategy, end-to-end testing (web, mobile and desktop), manual and "
         "regression testing, functional and UI testing, exploratory and edge-case testing, UAT "
         "coordination and sign-off, release readiness reporting, defect management, database "
-        "validation (SQL / MS SQL), security spot-checks",
+        "validation (SQL / MS SQL, MongoDB), performance and load testing (JMeter, k6, "
+        "LoadRunner), security testing (Burp Suite, OWASP ZAP), ETL / data-pipeline testing",
     ),
     (
         "Accessibility",
@@ -68,11 +72,12 @@ SKILLS = [
     (
         "CI/CD and test infrastructure",
         "GitHub Actions, CI pipeline maintenance and debugging, automated regression runs, "
-        "Docker, containerised build pipelines, Android emulator and AVD provisioning, Vercel",
+        "Docker, Android emulator and AVD provisioning, Jenkins, GitLab CI, Bitbucket, AWS, "
+        "Google Cloud, Vercel, Linux, BrowserStack / LambdaTest, Grafana / Datadog / Splunk",
     ),
     (
         "Tools and process",
-        "Git, GitHub, GitLab, Jira, Agile / Scrum (SDLC / STLC), Maven, Zoho",
+        "Git, GitHub, GitLab, Jira, Agile / Scrum (SDLC / STLC), Maven, Zoho, mentoring",
     ),
 ]
 

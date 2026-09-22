@@ -6,11 +6,11 @@ SUMMARY
 Senior QA Engineer and SDET with nearly three years owning quality end to end - test strategy, automation across web, Android and desktop, and WCAG 2.1 / 2.2 AA accessibility. Sole quality owner on a live React 19 and Hono / PostgreSQL platform, where I authored a 1,028-case suite, built the team's test-management tooling as a deployed product, and merged 206 commits into the product itself.
 
 CORE SKILLS
-Test automation: Playwright, Selenium WebDriver, Appium, TestNG, Cucumber (BDD), Page Object Model, REST API automation, Postman, TestRigor, Vitest, JavaScript / TypeScript, Java, Python
-QA practice: Test planning and strategy, end-to-end testing (web, mobile and desktop), manual and regression testing, functional and UI testing, exploratory and edge-case testing, UAT coordination and sign-off, release readiness reporting, defect management, database validation (SQL / MS SQL), security spot-checks
+Test automation: Playwright, Selenium WebDriver, Appium, TestNG, Cucumber (BDD), Page Object Model, REST API automation, Postman, TestRigor, Vitest, JavaScript / TypeScript, Java, Python, Cypress, WebdriverIO, Robot Framework, JUnit, pytest, Mocha / Chai, REST Assured, SoapUI, Swagger / OpenAPI, contract testing (Pact), microservices, C# / .NET, Spring Boot, Django / Flask
+QA practice: Test planning and strategy, end-to-end testing (web, mobile and desktop), manual and regression testing, functional and UI testing, exploratory and edge-case testing, UAT coordination and sign-off, release readiness reporting, defect management, database validation (SQL / MS SQL, MongoDB), performance and load testing (JMeter, k6, LoadRunner), security testing (Burp Suite, OWASP ZAP), ETL / data-pipeline testing
 Accessibility: WCAG 2.1 / 2.2 AA, axe-core, keyboard and focus-order audits, screen-reader testing, inclusive design testing, responsive testing 320px-1920px, 200-400% zoom reflow
-CI/CD and test infrastructure: GitHub Actions, CI pipeline maintenance and debugging, automated regression runs, Docker, containerised build pipelines, Android emulator and AVD provisioning, Vercel
-Tools and process: Git, GitHub, GitLab, Jira, Agile / Scrum (SDLC / STLC), Maven, Zoho
+CI/CD and test infrastructure: GitHub Actions, CI pipeline maintenance and debugging, automated regression runs, Docker, Android emulator and AVD provisioning, Jenkins, GitLab CI, Bitbucket, AWS, Google Cloud, Vercel, Linux, BrowserStack / LambdaTest, Grafana / Datadog / Splunk
+Tools and process: Git, GitHub, GitLab, Jira, Agile / Scrum (SDLC / STLC), Maven, Zoho, mentoring
 
 PROFESSIONAL EXPERIENCE
 
