@@ -19,14 +19,14 @@ CONTACT = [
 
 from datetime import date
 
-CAREER_START = date(2023, 11, 1)
+CAREER_START = date(2023, 8, 1)
 _WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
 
 
 def experience_phrase(today=None):
     """'nearly three years', 'three years', 'over three years': whatever is true today."""
     today = today or date.today()
-    years = (today - CAREER_START).days / 365.25
+    years = round((today - CAREER_START).days / 365.25, 1)  # one decimal, same as the tailor engine
     whole = int(years)
     frac = years - whole
     word = lambda n: _WORDS[n] if n < len(_WORDS) else str(n)
@@ -86,7 +86,7 @@ SKILLS = [
 EXPERIENCE = [
     {
         "role": "Senior QA Engineer / Full-Stack SDET",
-        "org": "Codesage (deployed at EnAble India)",
+        "org": "Codesage (deployed at EnAble India, an NGO)",
         "meta": "Bengaluru, India | Feb 2026 - Present | Full-time",
         "bullets": [
             "Sole quality owner for MEL, a multi-module platform serving people with disabilities "
@@ -105,7 +105,7 @@ EXPERIENCE = [
     {
         "role": "QA Automation Engineer",
         "org": "Ace Infoway Pvt. Ltd.",
-        "meta": "Ahmedabad, India | Nov 2023 - Jan 2026 | Full-time",
+        "meta": "Ahmedabad, India | Aug 2023 - Jan 2026 | Full-time",
         "bullets": [
             "Built and maintained Selenium (Java, TestNG) and Playwright frameworks on the Page Object "
             "Model with Cucumber BDD, covering web, Android and iOS from a single unified codebase.",

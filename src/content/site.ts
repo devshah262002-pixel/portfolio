@@ -60,7 +60,7 @@ export type ExperienceEntry = {
 export const experience: ExperienceEntry[] = [
   {
     role: "Senior QA Engineer — Full-Stack SDET",
-    org: "Codesage (deployed at EnAble India)",
+    org: "Codesage (deployed at EnAble India, an NGO)",
     place: "Bengaluru, India",
     period: "Feb 2026 — Present",
     duration: "6 months",
@@ -79,7 +79,7 @@ export const experience: ExperienceEntry[] = [
     role: "QA Automation Engineer",
     org: "Ace Infoway Pvt. Ltd.",
     place: "Ahmedabad, India",
-    period: "Nov 2023 — Jan 2026",
+    period: "Aug 2023 — Jan 2026",
     duration: "2 years 2 months",
     engagement: "Full-time",
     points: [

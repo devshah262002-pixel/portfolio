@@ -3,7 +3,7 @@ Senior QA Engineer - SDET
 Bengaluru, India | +91 96621 22232 | devshah262002@gmail.com | linkedin.com/in/dev-shah-654777389
 
 SUMMARY
-Senior QA Engineer and SDET with nearly three years owning quality end to end - test strategy, automation across web, Android and desktop, and WCAG 2.1 / 2.2 AA accessibility. Sole quality owner on a live React 19 and Hono / PostgreSQL platform, where I authored a 1,028-case suite, built the team's test-management tooling as a deployed product, and merged 206 commits into the product itself.
+Senior QA Engineer and SDET with three years owning quality end to end - test strategy, automation across web, Android and desktop, and WCAG 2.1 / 2.2 AA accessibility. Sole quality owner on a live React 19 and Hono / PostgreSQL platform, where I authored a 1,028-case suite, built the team's test-management tooling as a deployed product, and merged 206 commits into the product itself.
 
 CORE SKILLS
 Test automation: Playwright, Selenium WebDriver, Appium, TestNG, Cucumber (BDD), Page Object Model, REST API automation, Postman, TestRigor, Vitest, JavaScript / TypeScript, Java, Python, Cypress, WebdriverIO, Robot Framework, JUnit, pytest, Mocha / Chai, REST Assured, SoapUI, Swagger / OpenAPI, contract testing (Pact), microservices, C# / .NET, Spring Boot, Django / Flask
@@ -14,7 +14,7 @@ Tools and process: Git, GitHub, GitLab, Jira, Agile / Scrum (SDLC / STLC), Maven
 
 PROFESSIONAL EXPERIENCE
 
-Senior QA Engineer / Full-Stack SDET - Codesage (deployed at EnAble India)
+Senior QA Engineer / Full-Stack SDET - Codesage (deployed at EnAble India, an NGO)
 Bengaluru, India | Feb 2026 - Present | Full-time
 - Sole quality owner for MEL, a multi-module platform serving people with disabilities across web, Windows desktop and Android in three languages.
 - Authored and maintain a 1,028-case test suite across 22 modules, with per-role variants covering nine role types and their data-visibility rules.
@@ -23,7 +23,7 @@ Bengaluru, India | Feb 2026 - Present | Full-time
 - Drove UAT cycles end to end, producing the sign-off packages, release notes and production readiness reports the client signs against.
 
 QA Automation Engineer - Ace Infoway Pvt. Ltd.
-Ahmedabad, India | Nov 2023 - Jan 2026 | Full-time
+Ahmedabad, India | Aug 2023 - Jan 2026 | Full-time
 - Built and maintained Selenium (Java, TestNG) and Playwright frameworks on the Page Object Model with Cucumber BDD, covering web, Android and iOS from a single unified codebase.
 - Automated 70% of regression testing, cutting manual effort per sprint by 50%.
 - Executed 600+ test cases per release at 100% functional coverage, with consistently bug-free production builds.
