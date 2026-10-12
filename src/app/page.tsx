@@ -29,6 +29,9 @@ const marqueeItems = [
   "SQL",
 ];
 
+// Re-render once a day so experience figures and durations stay current without a redeploy.
+export const revalidate = 86400;
+
 export default function Home() {
   return (
     <>

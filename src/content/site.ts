@@ -1,3 +1,5 @@
+import { durationLabel, experiencePhrase, experienceYears } from "./dates";
+
 export const site = {
   name: "Dev Shah",
   role: "Senior QA Engineer — SDET",
@@ -12,10 +14,13 @@ export const site = {
   availability: "Open to Senior QA / SDET roles — Bengaluru or remote",
   cv: "/Dev-Shah-Senior-QA-Engineer-SDET.pdf",
   cvDocx: "/Dev-Shah-Senior-QA-Engineer-SDET.docx",
-  intro: [
-    "I am a Senior QA Engineer and SDET with nearly three years in test automation, currently owning quality end to end on MEL — a live platform that helps people with disabilities move through skill training, employment and post-placement support.",
-    "My work does not stop at finding defects. I write the test strategy, automate the regression suite across web, Android and desktop, enforce WCAG 2.2 AA, and build the internal tooling my team runs its testing on. When a fix is faster to ship than to describe, I ship it — 206 of my commits are merged into the product's own React and Hono codebases.",
-  ],
+  // Getters, so date-derived figures are worked out at render time, not frozen at build.
+  get intro() {
+    return [
+      `I am a Senior QA Engineer and SDET with ${experiencePhrase()} in test automation, currently owning quality end to end on MEL — a live platform that helps people with disabilities move through skill training, employment and post-placement support.`,
+      "My work does not stop at finding defects. I write the test strategy, automate the regression suite across web, Android and desktop, enforce WCAG 2.2 AA, and build the internal tooling my team runs its testing on. When a fix is faster to ship than to describe, I ship it — 206 of my commits are merged into the product's own React and Hono codebases.",
+    ];
+  },
   pillars: [
     {
       title: "Test strategy & execution",
@@ -38,12 +43,14 @@ export const site = {
         "I built my team's test-management dashboard as a deployed product, with a Playwright runner that executes queued tests and posts results straight back to Jira.",
     },
   ],
-  headlineMetrics: [
-    { value: "2.9", label: "years in QA automation" },
-    { value: "1,028", label: "test cases authored & owned" },
-    { value: "206", label: "commits merged to production code" },
-    { value: "WCAG 2.2", label: "AA enforced across the product" },
-  ],
+  get headlineMetrics() {
+    return [
+      { value: experienceYears().toFixed(1), label: "years in QA automation" },
+      { value: "1,028", label: "test cases authored & owned" },
+      { value: "206", label: "commits merged to production code" },
+      { value: "WCAG 2.2", label: "AA enforced across the product" },
+    ];
+  },
 };
 
 export type ExperienceEntry = {
@@ -63,7 +70,9 @@ export const experience: ExperienceEntry[] = [
     org: "Codesage (deployed at EnAble India, an NGO)",
     place: "Bengaluru, India",
     period: "Feb 2026 — Present",
-    duration: "6 months",
+    get duration() {
+      return durationLabel([2026, 2]);
+    },
     engagement: "Full-time · Client site",
     current: true,
     points: [
@@ -80,7 +89,7 @@ export const experience: ExperienceEntry[] = [
     org: "Ace Infoway Pvt. Ltd.",
     place: "Ahmedabad, India",
     period: "Aug 2023 — Jan 2026",
-    duration: "2 years 2 months",
+    duration: durationLabel([2023, 8], [2026, 1]),
     engagement: "Full-time",
     points: [
       "Built and maintained Selenium and Playwright automation frameworks on the Page Object Model with Cucumber BDD, covering web, Android and iOS from a single unified codebase.",
